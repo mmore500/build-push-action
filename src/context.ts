@@ -79,7 +79,7 @@ export async function getInputs(defaultContext: string): Promise<Inputs> {
 }
 
 export async function getArgs(inputs: Inputs, defaultContext: string, buildxVersion: string): Promise<Array<string>> {
-  let args: Array<string> = ['buildx'];
+  let args: Array<string> = [''];
   args.push.apply(args, await getBuildArgs(inputs, defaultContext, buildxVersion));
   args.push.apply(args, await getCommonArgs(inputs));
   args.push(inputs.context);
